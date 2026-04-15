@@ -1,0 +1,298 @@
+/* HOME NOTE CARDS */
+.search_box{
+    display: flex;
+    /* float: left; */
+    justify-content: center;
+    align-items: center;
+}
+input[type="text"] {
+  width: 50%;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+/* .clear_btn{
+    width: 100px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+} */
+
+.Home_note {
+    display: block;
+    width: 22%;
+
+    min-height: 150px;
+    background-color: #f2f2f2;
+    text-align: left;
+    border: 1px solid gray;
+    margin: 15px;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 15px;
+    cursor: pointer;
+    float: left;
+
+    /* IMPORTANT */
+    position: relative;
+
+    /* TEXT FIX */
+    word-break: normal;
+    overflow-wrap: break-word;
+
+    border-radius: 10px;
+}
+
+/* Hover effect */
+.Home_note:hover {
+    transform: scale(1.03);
+    transition: 0.2s;
+}
+
+/* Title */
+.Home_note>div>h2 {
+    color: black;
+    margin-top: 10px;
+}
+
+/* Content */
+.Home_note>div>p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.Home_form {
+    display: none;
+}
+
+.modal_overlay {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* .modal_box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} */
+
+.modal_box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+
+    animation: popup 0.2s ease;
+}
+
+.modal_box>h2 {
+    color: black;
+}
+
+.modal_box input,
+.modal_box textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+}
+
+.modal_box button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal_box button:first-of-type {
+    background-color: #007bff;
+    /* save */
+    color: white;
+}
+
+.modal_box button:last-of-type {
+    background-color: #ccc;
+    /* cancel */
+}
+
+.modal_box {
+    animation: popup 0.2s ease;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ========================= */
+/* DELETE + EDIT BUTTONS */
+/* ========================= */
+
+.del_edit_btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    gap: 5px;
+}
+
+/* Buttons */
+.del_edit_btn button {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Delete button */
+.del_edit_btn button:first-child {
+    background-color: red;
+    color: white;
+}
+
+/* Edit button */
+.del_edit_btn button:last-child {
+    background-color: orange;
+    color: white;
+}
+
+/* Hover effect for buttons */
+.del_edit_btn button:hover {
+    transform: scale(1.1);
+}
+
+/* Prevent content overlap */
+.Home_note>div:first-child {
+    padding-top: 20px;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width:768px) {
+    .Home_note {
+        width: 70%;
+        height: auto;
+        padding: 15px;
+        margin: 10px auto;
+        float: none;
+    }
+}
+
+/* ========================= */
+/* SINGLE NOTE DISPLAY */
+/* ========================= */
+
+.display_content {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Title */
+.display_content>h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+/* Content */
+.display_content>p {
+    color: black;
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+/* Buttons */
+.display_content>button {
+    background-color: rgb(32, 151, 224);
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    margin: 10px auto;
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+
+/* Hover */
+.display_content>button:hover {
+    background-color: #02cbf4;
+    border: 1px solid #13e0d2;
+}
+
+
+.add_btn {
+    position: fixed;
+    bottom: 25%;
+    right: 15%;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    border: none;
+
+    background-color: #007bff;
+    color: white;
+
+    font-size: 30px;
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    z-index: 999;
+    /* 🔥 FIX */
+}
+
+@media (max-width:768px) {
+    .add_btn {
+        position: fixed;
+        bottom: 40%;
+        right: 10%;
+        z-index: 999;
+        background-color: #007bff;
+        color: white;
+    }
+}
